@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Improvit | Plumbing & Construction</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(rgba(0,70,160,0.88), rgba(0,70,160,0.88)),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.12);
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* BUTTON STYLE */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 20px;
+    background: #00ffae;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+
+    transition: transform 0.1s, box-shadow 0.2s;
+}
+
+/* hover lift */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,255,170,0.5);
+}
+
+/* press down */
+.btn:active {
+    transform: scale(0.92);
+}
+
+/* CLICK ANIMATION CLASS */
+.btn.animate {
+    animation: pop 0.35s ease;
+}
+
+/* keyframes */
+@keyframes pop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.2); }
+    70%  { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* glow flash */
+.btn.animate {
+    box-shadow: 0 0 20px #00ffae;
+}
+
+/* form */
+input, select, textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: none;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 700px;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 12px;
+}
+
+.gallery img {
+    width: 260px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+footer {
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>IMPROVIT 🔧🏗️</h1>
+<p>Fast. Clean. Reliable.</p>
+<p><strong>📞 <a style="color:#00ffae" href="tel:+27123456789">+27 12 345 6789</a></strong></p>
+</header>
+
+<!-- SERVICES -->
+<section>
+<h2>Services</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Plumbing</h3>
+<a href="tel:+27123456789" class="btn">Call Plumber</a>
+</div>
+
+<div class="card">
+<h3>Construction</h3>
+<a href="tel:+27123456789" class="btn">Call Builder</a>
+</div>
+</div>
+</section>
+
+<!-- PRICES -->
+<section>
+<h2>Prices 💸</h2>
+
+<table>
+<tr><th>Service</th><th>Price</th></tr>
+<tr><td>Fix Leak</td><td>R350</td></tr>
+<tr><td>Drain Unblock</td><td>R500</td></tr>
+<tr><td>Geyser Install</td><td>R2500</td></tr>
+<tr><td>Wall Build</td><td>R1800</td></tr>
+</table>
+</section>
+
+<!-- BOOK -->
+<section>
+<h2>Book a Worker 📅</h2>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+
+<select required>
+<option>Select Service</option>
+<option>Plumbing</option>
+<option>Construction</option>
+</select>
+
+<input type="date" required>
+<textarea placeholder="Describe job"></textarea>
+
+<button type="submit" class="btn">Book Now</button>
+</form>
+</section>
+
+<!-- GALLERY -->
+<section>
+<h2>Gallery 📸</h2>
+
+<div class="grid gallery">
+<img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
+<img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df">
+</div>
+</section>
+
+<footer>
+<p>© 2026 Improvit Plumbing & Construction</p>
+</footer>
+
+<!-- JS FOR CLICK ANIMATIONS -->
+<script>
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", function() {
+        btn.classList.add("animate");
+
+        setTimeout(() => {
+            btn.classList.remove("animate");
+        }, 350);
+    });
+});
+</script>
+
+</body>
+</html>
